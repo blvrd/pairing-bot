@@ -221,6 +221,10 @@ func (pl *PairingLogic) Match(ctx context.Context) error {
 	return nil
 }
 
+func (pl *PairingLogic) Remind(ctx context.Context) error {
+  return nil
+}
+
 // EndOfBatch unsubscribes everyone who just never-graduated with this batch.
 func (pl *PairingLogic) EndOfBatch(ctx context.Context) error {
 	// getting all the recursers

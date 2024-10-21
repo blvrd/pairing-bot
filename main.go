@@ -111,6 +111,7 @@ func main() {
 	http.HandleFunc("/", http.NotFound)                 // will this handle anything that's not defined?
 	http.HandleFunc("/webhooks", pl.handle)             // from zulip
 	http.HandleFunc("/match", cron(pl.Match))           // from GCP- daily
+	http.HandleFunc("/remind", cron(pl.Remind))         // from GCP- daily
 	http.HandleFunc("/endofbatch", cron(pl.EndOfBatch)) // from GCP- weekly
 	http.HandleFunc("/welcome", cron(pl.Welcome))       // from GCP- weekly
 	http.HandleFunc("/checkin", cron(pl.Checkin))       // from GCP- weekly
